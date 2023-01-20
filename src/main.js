@@ -263,6 +263,12 @@ $( "#turnRight" ).click(function() {
 })
 
 $( "#emergencySwitch" ).click(function() {
+    clearInterval(rightInterval);
+    rightInterval = undefined;
+    $("#rightTurn").css('opacity', '0.3');
+    clearInterval(leftInterval);
+    leftInterval = undefined;
+    $("#leftTurn").css('opacity', '0.3');
   if(leftInterval && rightInterval){
     clearInterval(rightInterval);
     rightInterval = undefined;

@@ -4,6 +4,17 @@ body{
 p {
   font-size: 25px;
 }
+button{
+  min-width:70px;
+  height: 40px;
+  font-size: 20px;
+  background-color: rgb(149, 201, 251);
+  border-radius: 10px;
+  font-weight: bold;
+}
+#allButtons{
+  z-index: 10;
+}
 .everything{
   display: flex;
 }
@@ -19,6 +30,7 @@ p {
   -webkit-box-shadow:0px 0px 45px 0px rgba(149, 201, 251, 0.55);
   -moz-box-shadow: 0px 0px 45px 0px rgba(149, 201, 251, 0.55);
   box-shadow: 0px 0px 45px 0px rgba( 149, 201, 251, 0.55);
+  z-index: 10;
 }
 
 .obrotomierz{
@@ -34,6 +46,20 @@ p {
   -moz-box-shadow: 0px 0px 45px 0px rgba(149, 201, 251, 0.55);
   box-shadow: 0px 0px 45px 0px rgba( 149, 201, 251, 0.55);
 }
+.fuel {
+  position: relative;
+  margin-left:2vw;
+  margin-top: calc(20vh + 100px);
+  width: 300px;
+  height: 300px; /* as the half of the width */
+  /* background-color: rgb(13, 11, 3); */
+  border-radius: 155px; /* 100px of height + 10px of border */
+  border: 5px solid rgb(149, 201, 251);
+  -webkit-box-shadow:0px 0px 45px 0px rgba(149, 201, 251, 0.55);
+  -moz-box-shadow: 0px 0px 45px 0px rgba(149, 201, 251, 0.55);
+  box-shadow: 0px 0px 45px 0px rgba( 149, 201, 251, 0.55);
+}
+
 .numbers {
   position: absolute;
   left:22px;
@@ -97,6 +123,37 @@ p {
   z-index: 3;
 }
 
+#hidebottomFuel {
+  position: absolute;
+  left:-50px;
+  top: 50%;
+  background-color: black;
+  height: 200px;
+  width: 470px;
+  z-index: 3;
+}
+
+#hideleftFuel {
+  position: absolute;
+  left:-50px;
+  top: -50px;
+  background-color: black;
+  height: 250px;
+  width: 200px;
+  z-index: 3;
+}
+
+#hideCircleFuel {
+  position: absolute;
+  left:15px;
+  top: 15px;
+  width: 280px;
+  height: 280px;
+  background-color: black;
+  border-radius: 155px;  
+  z-index: 3;
+}
+
 #hand {
   position: absolute;
   top:49%;
@@ -105,7 +162,7 @@ p {
   width: 40%;
   transform-origin: 50px 18px;
   transform: rotate(162deg);
-  background: url("../public/hand4.png");
+  background: url("/hand4.png");
   z-index: 6;
   animation: mymove 0.5s infinite;
 }
@@ -117,7 +174,20 @@ p {
   width: 40%;
   transform-origin: 50px 18px;
   transform: rotate(162deg);
-  background: url("../public/hand4.png");
+  background: url("/hand4.png");
+  z-index: 6;
+  animation: mymove 0.5s infinite;
+}
+
+#handFuel {
+  position: absolute;
+  top:45%;
+  left:calc(50% - 25px);
+  height:18px;
+  width: 40%;
+  transform-origin: 25px 9px;
+  transform: rotate(0deg);
+  background: url("/handfuel.png");
   z-index: 6;
   animation: mymove 0.5s infinite;
 }
@@ -126,9 +196,23 @@ p {
   margin-left: 10vw;
   z-index: 7;
 }
+#changeDirection{
+  position: relative;
+  margin-left: 10vw;
+  z-index: 11;
+}
+#changeFuel{
+  position: relative;
+  margin-left: 10vw;
+  z-index: 7;
+}
+#switchIcons {
+  position: relative;
+  margin-left: 10vw;
+  z-index: 7;
+}
 
 #accelerate{
-  width: 100px;
   margin-right: 4vw;
   animation: mymove 5s infinite;
 }
@@ -154,6 +238,76 @@ p {
   top: -3px;
   background-color:rgb(149, 201, 251);
   z-index: 0;
+}
+.fuelpointer {
+  position: absolute;
+  width: 3px;
+  height: 307px;
+  left: 49.35%;
+  top: -3px;
+  background-color:white;
+  z-index: 0;
+}
+
+.fuelpointer1 {
+    transform: rotate(0deg);
+    width: 6px;
+    background-color:rgb(149, 201, 251);
+}
+
+.fuelpointer2 {
+    transform: rotate(10deg);
+}
+
+.fuelpointer3 {
+    transform: rotate(20deg);
+}
+
+.fuelpointer4 {
+  transform: rotate(30deg);
+}
+
+.fuelpointer5 {
+  transform: rotate(40deg);
+}
+
+.fuelpointer6 {
+  transform: rotate(50deg);
+}
+
+.fuelpointer7 {
+  transform: rotate(60deg);
+}
+
+.fuelpointer8 {
+  transform: rotate(70deg);
+}
+
+.fuelpointer9 {
+  transform: rotate(80deg);
+}
+
+.fuelpointer10 {
+  transform: rotate(90deg);
+  height: 304px;
+  width: 10px;
+  background-color:red;
+}
+
+#textF {
+  position: absolute;
+  top: -3px;
+  left:45%;
+  color: white;
+  z-index: 10;
+}
+
+#textE{
+  position: absolute;
+  top:52%;
+  left:99%;
+  color: white;
+  z-index: 10;
 }
 .pointer1{
   transform: rotate(-90deg);
@@ -339,4 +493,79 @@ p {
 
 .small.pointer10{
   transform: rotate(81deg);
+}
+
+#iconsContainer {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top:5vh;
+  left:27vw;
+}
+#upperIcons {
+  display: flex;
+  gap: 95px;
+}
+#middleIcons {
+  display: flex;
+  margin-left: 75px;
+  gap: 100px;
+}
+#leftTurn {
+  position: relative;
+  opacity: 0.3;
+  width: 64px;
+  height: 64px;
+  background-image: url(left-turn-light.png);
+}
+
+#rightTurn {
+  position: relative;
+  opacity: 0.3;
+  width: 64px;
+  height: 64px;
+  background-image: url(right-turn-light.png);
+}
+#lights {
+  position: relative;
+  opacity: 0.3;
+  width: 64px;
+  height: 64px;
+  background-image: url(lights2.png);
+}
+
+#oil {
+  position: relative;
+  opacity: 0.3;
+  width: 64px;
+  height: 64px;
+  background-image: url(oil.png);
+}
+
+#box {
+  position: relative;
+  opacity: 0.3;
+  width: 64px;
+  height: 64px;
+  background-image: url(box.png);
+}
+
+#pasy {
+  left:42%;
+  position: relative;
+  opacity: 0.3;
+  width: 64px;
+  height: 64px;
+  background-image: url(pasy.png);
+}
+
+#iconFuel{
+  position: relative;
+  top: 50px;
+  left:100px;
+  opacity: 1;
+  width: 40px;
+  height: 40px;
+  background-image: url(/fuel.png);
+  z-index: 10;
 }

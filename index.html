@@ -6,6 +6,18 @@
     <title>Car Dashboard</title>
   </head>
   <body>
+    <div id="iconsContainer">
+      <div id="upperIcons">
+        <div id="leftTurn"></div>
+        <div id="lights"></div>
+        <div id="rightTurn"></div>
+      </div>
+      <div id="middleIcons">
+        <div id="oil"></div>
+        <div id="box"></div>
+      </div>
+      <div id="pasy"></div>
+    </div>
     <div class="everything">
       <div class="obrotomierz">
         <div id="hand"></div>
@@ -88,10 +100,51 @@
           <div class="number num220"><p>220</p></div>
           <div class="number num240"><p>240</p></div>
         </div>
+        </div>
+        <div class="fuel">
+            <div id="handFuel"></div>
+            <div id="hideleftFuel"></div>
+            <div id="hidebottomFuel"></div>
+            <div id="hideCircleFuel"></div>
+            <div id="textE">E</div>
+            <div id="textF">F</div>
+            <div id="iconFuel"></div>
+            <div class="fuelpointer fuelpointer1"></div>
+            <div class="fuelpointer fuelpointer2"></div>  
+            <div class="fuelpointer fuelpointer3"></div>     
+            <div class="fuelpointer fuelpointer4"></div>  
+            <div class="fuelpointer fuelpointer5"></div>  
+            <div class="fuelpointer fuelpointer6"></div>  
+            <div class="fuelpointer fuelpointer7"></div>  
+            <div class="fuelpointer fuelpointer8"></div>  
+            <div class="fuelpointer fuelpointer9"></div>  
+            <div class="fuelpointer fuelpointer10"></div>  
+        </div>
       </div>
+      <div id="allButtons">
     <div id="changeSpeed">
       <button id="accelerate">Accelerate</button>
       <button id="brake">Brake</button>
+      <button id="accelerateobroty">Accelerate</button>
+      <button id="brakeobroty">Brake</button>
+    </div>
+    <div id="changeDirection">
+      <button id="turnLeft">turnLeft</button>
+      <button id="turnRight">turnRight</button>
+      <button id="emergencySwitch">Emergency</button>
+    </div>
+    <div id="changeFuel">
+      <button id="fuelUp">fuel Up</button>
+      <button id="fuelDown">fuel Down</button>
+      <button id="fuelFull">fuel Full</button>
+      <button id="emergencySwitch">Emergency</button>
+    </div>
+    <div id="switchIcons">
+      <button id="lightsOnOff">switch lights</button>
+      <button id="oilOnOff">switch oil</button>
+      <button id="boxOnOff">switch box</button>
+      <button id="pasyOnOff">switch pasy</button>
+    </div>
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script type="module" src="/src/main.js"></script>
